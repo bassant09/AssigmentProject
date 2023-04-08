@@ -1,0 +1,131 @@
+<div
+  #card
+  class="card p-2 bg-white mb-1"
+  draggable="true"
+  style="border-radius: 13px"
+  (dragstart)="onDragStart($event)"
+  data-bs-toggle="modal" [attr.data-bs-target]="'#A'+cardData.id"
+>
+  <div>
+    <div class="mb-2">
+      <header style="font-size: 18px; font-weight: 600; color: #313c75">
+        {{ cardData.first_name }} {{ cardData.last_name }}
+      </header>
+    </div>
+    <div>
+      <div class="d-flex mb-2">
+        <span
+          class="badge me-1 text-white"
+          style="background-color: rgb(180, 180, 180)"
+          >{{ cardData.state }}</span
+        >
+        <span class="badge text-white" style="background-color: #4169e1" [ngClass]="{
+          'bg-danger': this.probability_status[0] < 50,
+          'bg-success': this.probability_status[0] >= 90
+        }">{{
+          cardData.probability_status
+        }}</span>
+      </div>
+      <div class="d-flex m-0 p-0">
+        <span class="me-2 fontStyle">
+          <i
+            class="bi bi-telephone-fill m"
+            style="color: rgb(180, 180, 180)"
+          ></i>
+          &nbsp;</span
+        >
+        <p class="fontStyle m-0">{{ cardData.phone }}</p>
+      </div>
+      <div class="d-flex m-0 p-0">
+        <span class="me-2 fontStyle">
+          <i class="bi bi-calendar" style="color: rgb(180, 180, 180)"></i>
+          &nbsp; {{ cardData.date }}</span
+        >
+      </div>
+    </div>
+    <div class="progress">
+      <div
+        class="progress-bar bg-primary progress-bar-striped progress-bar-animated"
+        role="progressbar"
+        aria-label="Animated striped example"
+        aria-valuenow="75"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [ngStyle]="{ width: cardData.probability_status }"
+        [ngClass]="{
+          'bg-danger': this.probability_status[0] < 50,
+          'bg-success': this.probability_status[0] >= 90
+        }"
+      ></div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  [id]="'A'+cardData.id"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content  ">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" style="color: #313c75" id="exampleModalLabel">{{ cardData.first_name }} {{ cardData.last_name }}'s Details </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex">
+           <span  class="fontStyle me-2" ><i class="bi bi-building-fill-gear " style="color: rgb(180, 180, 180)"></i> &nbsp;company:</span> 
+          <span class="fontStyle"  style="font-size: large;">{{cardData.company}}</span>
+        </div>
+        <div class="d-flex">
+         <span class="fontStyle me-2"><i class="bi bi-envelope-at-fill" style="color: rgb(180, 180, 180)"></i> &nbsp; email: </span>
+          <span class="fontStyle"  style="font-size: large;">{{cardData.email}}</span>
+        </div>
+        <div class="d-flex">
+         <span  class="fontStyle me-2" > <i class="bi bi-clipboard2-fill"></i> &nbsp; status:</span> 
+          <span class="fontStyle"  style="font-size: large;">{{cardData.status}}</span>
+        </div>
+        <div class="d-flex">
+          <span  class="fontStyle me-2" > <i class="bi bi-graph-up"></i> &nbsp; probability status:</span> 
+           <span class="fontStyle"  style="font-size: large;">{{cardData.probability_status}}</span>
+         </div>
+         <div class="d-flex ">
+          <span class="me-2 fontStyle">
+            <i
+              class="bi bi-telephone-fill m"
+              style="color: rgb(180, 180, 180)"
+            ></i>
+            &nbsp; phone:</span
+          >
+          <p class="fontStyle m-0">{{ cardData.phone }}</p>
+        </div>
+        <div class="d-flex m-0 p-0">
+          <span class="me-2 fontStyle">
+            <i class="bi bi-calendar" style="color: rgb(180, 180, 180)"></i>
+            &nbsp;date:</span
+          >
+          <p class="fontStyle m-0">{{ cardData.date  }}</p>
+        </div>
+         <div class="d-flex">
+          <span  class="fontStyle me-2" ><i class="bi bi-circle-fill"></i> &nbsp; state:</span> 
+           <span class="fontStyle fw-bold"  style="font-size: large;" [ngClass]="{
+            'text-danger': cardData.state=='Returning',
+            'text-success': cardData.state=='New'
+
+          }">{{cardData.state}}</span>
+         </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center align-content-center">
+      <button type="button" class="btn " style="background-color:  #00008B; color: white;" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

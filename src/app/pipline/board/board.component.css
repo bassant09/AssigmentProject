@@ -1,0 +1,8 @@
+.searchbox{
+    outline: none;
+    border: 2px solid rgb(230, 230, 230)
+}
+input::placeholder {
+   color: rgb(196, 196, 196) ;
+   font-weight: 600;
+}

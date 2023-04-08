@@ -1,0 +1,9 @@
+.fontStyle {
+    color: #979797;
+
+}
+
+.card:active {
+   opacity: 0.25;
+   cursor: move;
+}

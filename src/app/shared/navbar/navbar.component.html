@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-3 ">
+    <div class="container-fluid ">
+  <div class="ms-3 ">
+      <h2 class=" fw-bolder "  style="color:#313c75 ;" >CRM Pipline</h2>
+    </div> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="nv navbar-nav me-auto mb-2 mb-lg-0 " >
+            <li class="nav-item d-flex flex-column me-4 p-2 " style="border-left: 4px solid #DE3163	">
+                <span  style=" color: #979797; font-weight: 500;" >Potential Value</span>
+                <span  style="color:#313c75 ; font-weight:bolder ; font-size:x-large" >{{data.PotentialValue}}</span>
+            </li>
+            <li class="nav-item d-flex flex-column me-4 p-2" style="border-left: 4px solid #8A2BE2">
+                <span  aria-current="page" style=" color: #979797; font-weight: 500;" >Focus</span>
+                <span  aria-current="page"  style="color:#313c75 ; font-weight:bolder ; font-size:x-large" >{{data.Focus}} </span>
+            </li>
+            <li class="nav-item d-flex flex-column me-4 p-2" style="border-left: 4px solid #0096FF	">
+                <span aria-current="page" style=" color: #979797; font-weight: 500;" >Contact Made
+                </span>
+                <span  aria-current="page"  style="color:#313c75 ; font-weight:bolder ; font-size:x-large" >{{data.ContactMade}}</span>
+            </li>
+            <li class="nav-item d-flex flex-column me-4 p-2" style="border-left: 4px solid #90EE90  ">
+                <span  aria-current="page" style=" color: #979797; font-weight: 500;" >Offer Sent
+                </span>
+                <span  aria-current="page"  style="color:#313c75 ; font-weight:bolder ; font-size:x-large" >{{data.OfferSent}}</span>
+            </li>
+            <li class="nav-item d-flex flex-column me-4 p-2" style="border-left: 4px solid #FFA500	">
+                <span  aria-current="page" style=" color: #979797; font-weight: 500;" >Getting Ready</span>
+                <span  aria-current="page"  style="color:#313c75 ; font-weight:bolder ; font-size:x-large" >{{data.GettingReady}}</span>
+            </li>
+       </ul>
+       
+      </div>
+    </div>
+  </nav>

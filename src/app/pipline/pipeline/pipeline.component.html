@@ -1,0 +1,15 @@
+<div
+  class="d-flex flex-column pipline"
+  (dragenter)="enterDrag($event)"
+  (dragover)="overDrag($event)"
+  (drop)="onDrop($event)"
+  style="min-height: 70vh;"
+  
+>
+  <div class="p-3">
+    <h4 style="font-weight: 650 ;color: #313c75;">{{ data.Name }}</h4>
+  </div>
+  <div class="p-1">
+    <app-card  [cardData]="card" *ngFor="let card of data.data"></app-card>
+  </div>
+</div>
